@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS article (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    author TEXT NOT NULL,
+    date TEXT NOT NULL,
+    doi TEXT UNIQUE
+);
