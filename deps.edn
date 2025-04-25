@@ -1,28 +1,41 @@
 {:paths   ["src/clj"
            "resources"]
 
- :deps    {org.clojure/clojure             {:mvn/version "1.12.0"}
+ :deps    {org.clojure/clojure {:mvn/version "1.12.0"}
 
            ;; Routing
-           metosin/reitit                  {:mvn/version "0.7.2"}
+           metosin/reitit {:mvn/version "0.7.2"}
 
            ;; Ring
-           metosin/ring-http-response      {:mvn/version "0.9.3"}
-           ring/ring-core                  {:mvn/version "1.14.0"}
-           ring/ring-defaults              {:mvn/version "0.6.0"}
+           metosin/ring-http-response {:mvn/version "0.9.3"}
+           ring/ring-core {:mvn/version "1.14.0"}
+           ring/ring-defaults {:mvn/version "0.6.0"}
 
            ;; Logging
-           ch.qos.logback/logback-classic  {:mvn/version "1.5.16"}
+           ch.qos.logback/logback-classic {:mvn/version "1.5.16"}
 
            ;; Data coercion
            luminus-transit/luminus-transit {:mvn/version "0.1.6"
                                             :exclusions [com.cognitect/transit-clj]}
-           metosin/muuntaja                {:mvn/version "0.6.8"}
+           metosin/muuntaja {:mvn/version "0.6.8"}
+
+           ;; HTTP Client
+           clj-http/clj-http {:mvn/version "3.13.0"}
 
            ;; kit Libs
            io.github.kit-clj/kit-core {:mvn/version "1.0.9"}
            io.github.kit-clj/kit-undertow {:mvn/version "1.0.8"}
-           }
+
+           ;; db
+           org.xerial/sqlite-jdbc {:mvn/version "3.49.1.0"}
+           com.github.seancorfield/next.jdbc {:mvn/version "1.3.1002"}
+           com.github.seancorfield/honeysql {:mvn/version "2.7.1295"}
+           migratus/migratus {:mvn/version "1.6.3"}
+
+           ;; UI
+           hiccup/hiccup {:mvn/version "2.0.0-RC5"}
+
+           org.clojure/core.async {:mvn/version "1.8.741"}}
  :aliases {:build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}}
                    :ns-default build}
 
@@ -37,7 +50,10 @@
                                 ring/ring-mock                  {:mvn/version "0.4.0"}
                                 io.github.kit-clj/kit-generator {:mvn/version "0.2.5"}
                                 org.clojure/tools.namespace     {:mvn/version "1.4.4"}
-                                }
+                                org.clojars.abhinav/snitch      {:mvn/version "0.1.16"}
+                                peridot/peridot                      {:mvn/version "0.5.4"}
+                                org.clj-commons/byte-streams         {:mvn/version "0.3.4"}
+                                org.clj-commons/hickory {:mvn/version "0.7.7"}}
                   :extra-paths ["env/dev/clj" "env/dev/resources" "test/clj"]}
            :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "1.1.0"}}
                    :main-opts  ["-m" "nrepl.cmdline" "-i"]}
@@ -58,9 +74,9 @@
                                 org.clojure/tools.namespace          {:mvn/version "1.4.5"}
                                 peridot/peridot                      {:mvn/version "0.5.4"}
                                 org.clj-commons/byte-streams         {:mvn/version "0.3.4"}
-                                com.lambdaisland/classpath           {:mvn/version "0.5.48"}}
+                                com.lambdaisland/classpath           {:mvn/version "0.5.48"}
+                                org.clj-commons/hickory {:mvn/version "0.7.7"}}
                   :exec-fn      cognitect.test-runner.api/test
                   :extra-paths ["env/dev/clj" "env/dev/resources" "env/test/resources" "test/clj"]
                   :main-opts   ["-e" "(require 'pjstadig.humane-test-output) (pjstadig.humane-test-output/activate!)"
-                                "-m" "cognitect.test-runner"]}}
- }
+                                "-m" "cognitect.test-runner"]}}}
