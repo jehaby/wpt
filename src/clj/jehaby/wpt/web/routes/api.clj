@@ -1,14 +1,14 @@
 (ns jehaby.wpt.web.routes.api
   (:require
-    [jehaby.wpt.web.controllers.health :as health]
-    [jehaby.wpt.web.middleware.exception :as exception]
-    [jehaby.wpt.web.middleware.formats :as formats]
-    [integrant.core :as ig]
-    [reitit.coercion.malli :as malli]
-    [reitit.ring.coercion :as coercion]
-    [reitit.ring.middleware.muuntaja :as muuntaja]
-    [reitit.ring.middleware.parameters :as parameters]
-    [reitit.swagger :as swagger]))
+   [jehaby.wpt.web.controllers.health :as health]
+   [jehaby.wpt.web.middleware.exception :as exception]
+   [jehaby.wpt.web.middleware.formats :as formats]
+   [integrant.core :as ig]
+   [reitit.coercion.malli :as malli]
+   [reitit.ring.coercion :as coercion]
+   [reitit.ring.middleware.muuntaja :as muuntaja]
+   [reitit.ring.middleware.parameters :as parameters]
+   [reitit.swagger :as swagger]))
 
 (def route-data
   {:coercion   malli/coercion
@@ -16,19 +16,19 @@
    :swagger    {:id ::api}
    :middleware [;; query-params & form-params
                 parameters/parameters-middleware
-                  ;; content-negotiation
+                ;; content-negotiation
                 muuntaja/format-negotiate-middleware
-                  ;; encoding response body
+                ;; encoding response body
                 muuntaja/format-response-middleware
-                  ;; exception handling
+                ;; exception handling
                 coercion/coerce-exceptions-middleware
-                  ;; decoding request body
+                ;; decoding request body
                 muuntaja/format-request-middleware
-                  ;; coercing response bodys
+                ;; coercing response bodys
                 coercion/coerce-response-middleware
-                  ;; coercing request parameters
+                ;; coercing request parameters
                 coercion/coerce-request-middleware
-                  ;; exception handling
+                ;; exception handling
                 exception/wrap-exception]})
 
 ;; Routes

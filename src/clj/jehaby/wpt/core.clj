@@ -5,12 +5,15 @@
    [jehaby.wpt.config :as config]
    [jehaby.wpt.env :refer [defaults]]
 
-    ;; Edges
+   ;; Edges
    [kit.edge.server.undertow]
    [jehaby.wpt.web.handler]
 
-    ;; Routes
-   [jehaby.wpt.web.routes.api])
+   [jehaby.wpt.web.routes.api]
+   [jehaby.wpt.elsevier]
+   [jehaby.wpt.db]
+   [jehaby.wpt.web.routes.ui])
+
   (:gen-class))
 
 ;; log uncaught exceptions in threads
