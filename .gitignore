@@ -19,3 +19,7 @@ modules/
 .clj-kondo/imports/
 .calva/output-window/
 .lsp/.cache/
+
+.envrc
+
+*.db
