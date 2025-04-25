@@ -1,0 +1,110 @@
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav a:hover {
+  color: #aaa
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+
+.content {
+  max-width: max-content;
+  padding-top: 1em;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5em;
+  align-items: flex-start;
+  /* Align items to the top in case content heights differ */
+
+}
+
+.article .title {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.article .author {
+  font-style: italic;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.article p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+.article .title {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.article .author {
+  font-style: italic;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.article .date,
+.article .doi {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.date-doi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* ---------------------------------------------------- */
+/* from https://github.com/vineethtrv/css-loader */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* LOADER END */
