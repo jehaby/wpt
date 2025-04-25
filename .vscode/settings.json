@@ -1,0 +1,9 @@
+{
+    "calva.customREPLCommandSnippets": [
+        {
+            "name": "Restart Integrant System",
+            "key": "r",
+            "snippet": "(integrant.repl/reset)"
+        }
+    ]
+}
